@@ -1,173 +1,37 @@
 # Google Forms JSON exporter
 
-A small Google Apps Script file to export a form into a JSON file. This form JSON object can then be used to build tools to collect form responses though other clients than the web interface.
+A small Google Apps Script to export a Google Form into a JSON file. This JSON object can be used to build tools to collect form responses through clients other than the Google Forms web interface.
 
 ### Installation
 
 * Create a [Google Apps Script file](https://developers.google.com/apps-script/).
-* Copy and paste the code in `src/Code.gs`.
-* Replace this line of code with your form editing URL:
+* Copy and paste the code from `src/Code.gs`.
+* Replace the placeholder URL in the script with your form's editing URL.
 
-```js
-var URL = "<your-form-editing-url-here>";
-```
+You're all set to run the script!
 
-Then you are good to go!
+### Example Output
 
-
-### Example output
-
-This example output is for [this form](https://docs.google.com/forms/d/e/1FAIpQLScPzx56zhMgV_iTxrm7F6O7-uFhqKYnuP2lda1OeL_ohAQsmw/viewform).
+The example output corresponds to [this form](https://docs.google.com/forms/d/e/1FAIpQLSc8mjo1vh9BrpLPVevXtb1G7WEXUiHnMIiSAENJyJKMB9ZsTA/viewform).
 
 ```json
-{  
-   "metadata":{  
-      "title":"Fun information",
-      "id":"12XJWWr-Z8gkRdxrkwoU8CYg1h8GqWv3OJh-AOLzpyyQ",
-      "description":"",
-      "publishedUrl":"https://docs.google.com/forms/d/e/1FAIpQLScPzx56zhMgV_iTxrm7F6O7-uFhqKYnuP2lda1OeL_ohAQsmw/viewform",
-      "editorEmails":[  
-         "stevenschmatz@gmail.com"
-      ],
-      "count":13,
-      "confirmationMessage":"Thanks for submitting your contact info!",
-      "customClosedFormMessage":""
-   },
-   "items":[  
-      {  
-         "type":"TEXT",
-         "helpText":"",
-         "title":"Name",
-         "index":0,
-         "id":1633920210,
-         "isRequired":false
-      },
-      {  
-         "type":"TEXT",
-         "helpText":"",
-         "title":"Email",
-         "index":1,
-         "id":227649005,
-         "isRequired":true
-      },
-      {  
-         "type":"PARAGRAPH_TEXT",
-         "helpText":"",
-         "title":"Address",
-         "index":2,
-         "id":790080973,
-         "isRequired":true
-      },
-      {  
-         "type":"MULTIPLE_CHOICE",
-         "helpText":"",
-         "index":3,
-         "id":1770822543,
-         "title":"How much do you like choices?",
-         "isRequired":false,
-         "hasOtherOption":true,
-         "choices":[  
-            "Option 1",
-            "Option 2"
-         ]
-      },
-      {  
-         "type":"CHECKBOX",
-         "helpText":"",
-         "index":4,
-         "id":1846923513,
-         "title":"How much do you like checkboxes?",
-         "isRequired":false,
-         "hasOtherOption":true,
-         "choices":[  
-            "Option 1 Check",
-            "Option 2 Check"
-         ]
-      },
-      {  
-         "type":"LIST",
-         "helpText":"",
-         "index":5,
-         "id":449887830,
-         "title":"How much do you like dropdowns?",
-         "isRequired":false,
-         "choices":[  
-            "Option 1 Dropdown",
-            "Option 2 Dropdown",
-            "Option 3 Dropdown"
-         ]
-      },
-      {  
-         "type":"SCALE",
-         "helpText":"",
-         "index":6,
-         "id":1522153189,
-         "upperBound":5,
-         "title":"How much do you like scales?",
-         "rightLabel":"Not fun",
-         "leftLabel":"Fun",
-         "lowerBound":1,
-         "isRequired":false
-      },
-      {  
-         "type":"GRID",
-         "helpText":"",
-         "index":7,
-         "id":271830833,
-         "rows":[  
-            "Row 1",
-            "Row 2"
-         ],
-         "columns":[  
-            "Column 1",
-            "Column 2"
-         ],
-         "title":"How much do you like grids?",
-         "isRequired":true
-      },
-      {  
-         "type":"DATE",
-         "helpText":"",
-         "index":8,
-         "id":132128974,
-         "title":"When were you born?",
-         "isRequired":true,
-         "includesYear":true
-      },
-      {  
-         "type":"TIME",
-         "helpText":"",
-         "title":"What time is it right now?",
-         "index":9,
-         "id":241877230,
-         "isRequired":false
-      },
-      {  
-         "type":"SECTION_HEADER",
-         "helpText":"No questions here.",
-         "title":"This is a title.",
-         "index":10,
-         "id":1461919302
-      },
-      {  
-         "type":"VIDEO",
-         "helpText":"",
-         "index":11,
-         "id":1219208494,
-         "width":320,
-         "title":"This is a YouTube video.",
-         "alignment":"LEFT"
-      },
-      {  
-         "type":"PAGE_BREAK",
-         "helpText":"Please work.",
-         "title":"This is a new section.",
-         "index":12,
-         "pageNavigationType":"CONTINUE",
-         "goToPage":null,
-         "id":259261228
-      }
-   ],
-   "count":13
+{
+  "metadata": {
+    "title": "Survey on the Psychological Impact of Virtual Reality",
+    "id": "1BAMuW1Hi1JuzFSx3KU-....-hpQqjtvLYxFgPk",
+    "description": "Participate in our study on the psychological impact of virtual reality on young adults...",
+    "publishedUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc8mjo1vh9BrpLPVevXtb1G7WEXUiHnMIiSAENJyJKMB9ZsTA/viewform",
+    "editorEmails": ["darkressxx1@gmail.com", "salmajportillo@gmail.com"],
+    "itemCount": 55,
+    "confirmationMessage": "Thank you for participating in our survey...",
+    "customClosedFormMessage": ""
+  },
+  "items": [
+    {
+      "type": "SECTION_HEADER",
+      "title": "Basic Information",
+      "helpText": "This section gathers general information..."
+    },
+    // More items...
+  ]
 }
-```
